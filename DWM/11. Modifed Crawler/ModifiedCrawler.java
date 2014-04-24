@@ -44,9 +44,9 @@ class ModifiedCrawler{
 		if(key_urls.size()==0) System.out.println("Keyword not found");
 		else{
 			System.out.println("Keyword found at:");
-			int i=0,maxfrequrl=0;
+			int i=0,maxfrequrl=0,maxfreq=0;
 			for(URL u:key_urls){//Printing of matched URLs and calculation of max frequency URL
-				if(key_count.get(i)>maxfrequrl)
+				if(key_count.get(i)>maxfreq)
 					maxfrequrl=i;
 				System.out.println("("+(i+1)+")"+u.toString()+" Frequency:"+key_count.get(i));
 				i++;
