@@ -1,1 +1,8 @@
 *.class
+SPCC/1. Lexical Analyzer/function.txt
+SPCC/1. Lexical Analyzer/identifier.txt
+SPCC/1. Lexical Analyzer/keyword.txt
+SPCC/1. Lexical Analyzer/operator.txt
+SPCC/1. Lexical Analyzer/specialSym.txt
+SPCC/4. Lex-YACC/calc
+SPCC/4. Lex-YACC/sql

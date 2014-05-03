@@ -1,0 +1,8 @@
+main()
+{
+	int i,j;
+	int c;
+	c=i+j;
+	float a;
+	c =a+ b;
+}
