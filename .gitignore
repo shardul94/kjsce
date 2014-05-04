@@ -19,3 +19,9 @@ SPCC/2. Macro/Pass1 Only/mnt.txt
 SPCC/2. Macro/Pass1 Only/pass1_output.txt
 SPCC/2. Macro/Pass2 Only/pass2_output.txt
 SPCC/1. Lexical Analyzer/output.txt
+SPCC/1. Lexical Analyzer/constant.txt
+SPCC/1. Lexical Analyzer/lexical_input - Copy (2).txt
+SPCC/1. Lexical Analyzer/lexical_input - Copy.txt
+SPCC/2. Assembler/Pass1 only/literal.txt
+SPCC/2. Assembler/Pass1 only/symbol.txt
+SPCC/2. Assembler/Pass1 only/twopass_output.txt

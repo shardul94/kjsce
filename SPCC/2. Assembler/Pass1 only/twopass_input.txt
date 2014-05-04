@@ -1,0 +1,10 @@
+PRGAM2	START	0
+	USING 	*,15
+	L	15,SETUP                        
+AC	EQU	2
+SETUP	EQU	*                                      
+	L	AC,NUM1                         
+	ST	AC,RESULT                       
+NUM1	DC	F'3'                              
+RESULT	D	'1'F                               
+	END
