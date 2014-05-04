@@ -62,7 +62,7 @@ class Lexical{
 		return false;
 	}
 	static boolean isConstant(String s){
-		if(Pattern.matches("\\d+\.\\d*",s))
+		if(Pattern.matches("\\d+[\\.\\d*]?",s))
 			return true;
 		return false;
 	}
@@ -86,9 +86,10 @@ class Lexical{
  * ^[a-zA-Z_] => ^ means starting with, [a-zA-Z_] means valid characters except 0-9 cz identifiers cannot start with numbers
  * \\w means any valid letter i.e. [a-zA-Z0-9_] Also \\w* means any no. of letters
  *
- * Constant Pattern: \\d+\.\\d*
+ * Constant Pattern: \\d+[\\.\\d*]?
  * \\d means digit and \\d+ means 1 or more digits
- * \. means a dot eg 15.137
+ * \\. means a dot eg 15.137
  * \\d* means 0 or more digits after dot
+ * [\\.\\d*]? means the thing inside [ ] is optional
  *
  ***************************************************/
