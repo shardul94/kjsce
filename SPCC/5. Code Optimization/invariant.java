@@ -23,7 +23,7 @@ class invariant{
 				String s1[] = line.split("=");
 				lines[i].lhs = s1[0].trim();
 				if(s1.length>1){
-					String s2[] = s1[1].trim().toCharArray();
+					String s2[] = s1[1].split("\\s|\\[|\\]");
 					lines[i].rhs = s2;
 				}
 			}
