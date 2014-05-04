@@ -83,11 +83,6 @@ class Lexical{
 				return true;
 		return false;
 	}
-	static boolean isFunction(String s){
-		if(Pattern.matches("^[a-zA-Z_]\\w*\\(.*",s))
-			return true;
-		return false;
-	}
 	static boolean isIdentifier(String s){
 		if(Pattern.matches("^[a-zA-Z_]\\w*",s))
 			return true;
@@ -122,13 +117,7 @@ class Lexical{
 	}
 }
 /***************PATTERN EXPLANATION****************/
-/* Function Pattern: ^[a-zA-Z_]\\w*\\(.*
- * ^[a-zA-Z_] => ^ means starting with, [a-zA-Z_] means valid characters except 0-9 cz functions cannot start with numbers
- * \\w means any valid letter i.e. [a-zA-Z0-9_] Also \\w* means any no. of letters
- * \\( means it should have opening bracket after function name
- * .* means after function, any no of chars
- *
- * Identifier Pattern: ^[a-zA-Z_]\\w*
+/* Identifier Pattern: ^[a-zA-Z_]\\w*
  * Same as the function name pattern excluding bracket and afterwards
  * ^[a-zA-Z_] => ^ means starting with, [a-zA-Z_] means valid characters except 0-9 cz identifiers cannot start with numbers
  * \\w means any valid letter i.e. [a-zA-Z0-9_] Also \\w* means any no. of letters
