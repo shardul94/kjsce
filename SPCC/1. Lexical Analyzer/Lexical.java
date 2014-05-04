@@ -6,9 +6,12 @@ class Lexical{
 	static char special_syms[] = {';',',','\'','\"','{','}'};
 	static char operators[] = {'+','-','*','/','='};
 	static String keywords[] ={"auto","break","case","char","const","continue","default","do","double","else","enum","extern","float","for","goto","if","int","long","register","return","short","signed","sizeof","static","struct","switch","typedef","union","unsigned","void","volatile","while"};
+	static int count_s=0,count_o=0,count_k=0,count_f=0,count_i=0,count_c=0;
 	public static void main(String args[]) throws Exception{
 		File input = new File("lexical_input.txt");
         Scanner in = new Scanner(input);
+        File output_file = new File("output.txt");
+        BufferedWriter output = new BufferedWriter(new FileWriter(output_file));
         while(in.hasNextLine()){        	
         	String s = in.nextLine();
         	String delimiters = " "+new String(special_syms)+ new String(operators); 
@@ -16,22 +19,50 @@ class Lexical{
         	while(st.hasMoreTokens()){
         		String token = st.nextToken().trim();
         		if(token.length()>0){
-        			if(isSpecialSym(token))
-        				write("specialSym",token);
-        			else if(isOperator(token))
-        				write("operator",token);
-        			else if(isKeyword(token))
-        				write("keyword",token);
-        			else if(isFunction(token)){
+        			if(isSpecialSym(token)){
+        				int temp = find("specialSym",token);
+        				if(temp==-1)
+        					write("specialSym",token);
+        				temp = find("specialSym",token);
+        				output.write("sp#"+temp+" ");
+        			}else if(isOperator(token)){
+        				int temp = find("operator",token);
+        				if(temp==-1)
+        					write("operator",token);
+        				temp = find("operator",token);
+        				output.write("op#"+temp+" ");
+        			}else if(isKeyword(token)){
+        				int temp = find("keyword",token);
+        				if(temp==-1)
+        					write("keyword",token);
+        				temp = find("keyword",token);
+        				output.write("key#"+temp+" ");
+        			}else if(isFunction(token)){
         				token = token.split("\\(")[0];
-        				write("function",token+"()");
-        			}else if(isIdentifier(token))
-        				write("identifier",token);
-        			else if(isConstant(token))
-        				write("constant",token);
+        				int temp = find("fucntion",token+"()");
+        				if(temp==-1)
+        					write("function",token+"()");
+        				temp = find("function",token+"()");
+        				output.write("fn#"+temp+" ");
+        			}else if(isIdentifier(token)){
+        				int temp = find("identifier",token);
+        				if(temp==-1)
+        					write("identifier",token);
+        				temp = find("identifier",token);
+        				output.write("id#"+temp+" ");
+        			}else if(isConstant(token)){
+        				int temp = find("constant",token);
+        				if(temp==-1)
+        					write("constant",token);
+        				temp = find("constant",token);
+        				output.write("cn#"+temp+" ");
+        			}
         		}
         	}
+        	output.write("\n");
         }
+        output.flush();
+        output.close();
 	}
 	static boolean isSpecialSym(String s){
 		for(char c : special_syms)
@@ -72,6 +103,21 @@ class Lexical{
 		out.write(token+"\r\n");
 		out.flush();
 		out.close();
+	}
+	static int find(String filename,String token){
+		try{
+			File f = new File(filename+".txt");
+			Scanner in = new Scanner(f);
+			int i=1;
+			while(in.hasNextLine()){
+				if(in.nextLine().equals(token))
+					return i;
+				i++;
+			}
+			return -1;
+		}catch(FileNotFoundException e){
+			return -1;
+		}
 	}
 }
 /***************PATTERN EXPLANATION****************/
