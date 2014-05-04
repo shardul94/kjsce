@@ -16,6 +16,7 @@ AND						{return and;}
 [0-9]+					{return constant;}
 [ \t]					;
 \n						{return 0;}
+.						{yyerror("Unexpected Character");}
 
 %%
 
