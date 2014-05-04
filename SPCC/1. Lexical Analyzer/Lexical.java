@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 import java.util.StringTokenizer;
 import java.io.*;
 class Lexical{
-	static char special_syms[] = {';',',','\'','\"','{','}'};
+	static char special_syms[] = {';',',','\'','\"','{','}','(',')'};
 	static char operators[] = {'+','-','*','/','='};
 	static String keywords[] ={"auto","break","case","char","const","continue","default","do","double","else","enum","extern","float","for","goto","if","int","long","register","return","short","signed","sizeof","static","struct","switch","typedef","union","unsigned","void","volatile","while"};
 	public static void main(String args[]) throws Exception{
@@ -36,19 +36,21 @@ class Lexical{
         					write("keyword",token);
         				temp = find("keyword",token);
         				output.write("key#"+temp+" ");
-        			}else if(isFunction(token)){
-        				token = token.split("\\(")[0];
-        				int temp = find("fucntion",token+"()");
-        				if(temp==-1)
-        					write("function",token+"()");
-        				temp = find("function",token+"()");
-        				output.write("fn#"+temp+" ");
         			}else if(isIdentifier(token)){
-        				int temp = find("identifier",token);
-        				if(temp==-1)
-        					write("identifier",token);
-        				temp = find("identifier",token);
-        				output.write("id#"+temp+" ");
+						int index = s.indexOf(token)+token.length();
+						if(s.charAt(index)=='('){
+        					int temp = find("function",token+"()");
+        					if(temp==-1)
+        						write("function",token+"()");
+        					temp = find("function",token+"()");
+        					output.write("fn#"+temp+" ");
+						}else{
+        					int temp = find("identifier",token);
+        					if(temp==-1)
+        						write("identifier",token);
+        					temp = find("identifier",token);
+        					output.write("id#"+temp+" ");
+						}
         			}else if(isConstant(token)){
         				int temp = find("constant",token);
         				if(temp==-1)
