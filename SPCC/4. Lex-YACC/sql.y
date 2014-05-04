@@ -11,21 +11,21 @@
 %%
 
 line		:	select1 fields from tables							{printf("Syntax Correct\n");}
-			|	select1 fields from tables where conditions			{printf("Syntax Correct\n");}
-			;
+		|	select1 fields from tables where conditions			{printf("Syntax Correct\n");}
+		;
 fields		:	star
-			|	identifier
-			|	identifier comma fields
-			;
+		|	identifier
+		|	identifier comma fields
+		;
 tables		:	identifier
-			|	identifier comma tables
-			;
+		|	identifier comma tables
+		;
 conditions	:	condition
-			|	condition and conditions
-			;
+		|	condition and conditions
+		;
 condition	:	identifier equals constant
-			|	identifier equals quote identifier quote
-			;
+		|	identifier equals quote identifier quote
+		;
 			
 %%
 

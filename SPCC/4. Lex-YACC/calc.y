@@ -12,14 +12,14 @@
 
 %%
 
-line	:	exp					{result=$1;}
+line	:	exp				{result=$1;}
 		;
-exp		:	number				{$$=$1;}
+exp		:	number			{$$=$1;}
 		|	exp plus exp		{$$=$1+$3;}
 		|	exp minus exp		{$$=$1-$3;}
 		|	exp multiply exp	{$$=$1*$3;}
 		|	exp divide exp		{ if($3==0) yyerror("Divide by zero error"); else $$=$1/$3;}
-		|	minus exp			{$$=-$2;}
+		|	minus exp		{$$=-$2;}
 		;
 
 %%

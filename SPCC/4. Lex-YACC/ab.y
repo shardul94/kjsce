@@ -9,12 +9,12 @@
 %token char_a char_b
 %%
 
-line	:	seq				{if(diff==0) printf("Syntax Correct\n"); else printf("Syntax Error\n");}
-		;
-seq		:	char_a seq		{diff++;}
-		|	char_b seq		{diff--;}
-		|				
-		;
+line	:	seq			{if(diff==0) printf("Syntax Correct\n"); else printf("Syntax Error\n");}
+	;
+seq	:	char_a seq		{diff++;}
+	|	char_b seq		{diff--;}
+	|				
+	;
 %%
 
 int main(void){
