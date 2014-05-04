@@ -6,7 +6,6 @@ class Lexical{
 	static char special_syms[] = {';',',','\'','\"','{','}'};
 	static char operators[] = {'+','-','*','/','='};
 	static String keywords[] ={"auto","break","case","char","const","continue","default","do","double","else","enum","extern","float","for","goto","if","int","long","register","return","short","signed","sizeof","static","struct","switch","typedef","union","unsigned","void","volatile","while"};
-	static int count_s=0,count_o=0,count_k=0,count_f=0,count_i=0,count_c=0;
 	public static void main(String args[]) throws Exception{
 		File input = new File("lexical_input.txt");
         Scanner in = new Scanner(input);
