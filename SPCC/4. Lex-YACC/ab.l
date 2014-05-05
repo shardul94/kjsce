@@ -4,8 +4,8 @@
 
 %%
 
-a		{return char_b;}
-b		{return char_a;}
+a		{return char_a;}
+b		{return char_b;}
 \n		{return 0;}
 .		{yyerror("Syntax Error\n");}
 
