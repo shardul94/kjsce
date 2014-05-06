@@ -74,6 +74,7 @@ t=a*b
 u=a-c
 v=a*t
 w=v+u
+
 MOV R0,a
 MUL R0,b
 
