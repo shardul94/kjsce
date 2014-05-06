@@ -46,3 +46,42 @@ class codegen{
 		return -1;
 	}
 }
+
+/************************
+ * OUTPUT:
+ * 
+Enter the no. of lines: 4
+Enter the lines:
+t=a-b
+u=a-c
+v=t+u
+d=v+u
+
+MOV R0,a
+SUB R0,b
+
+MOV R1,a
+SUB R1,c
+
+ADD R0,R1
+
+ADD R0,R1
+MOV d,R0
+
+Enter the no. of lines: 4
+Enter the lines:
+t=a*b
+u=a-c
+v=a*t
+w=v+u
+MOV R0,a
+MUL R0,b
+
+MOV R1,a
+SUB R1,c
+
+MOV R2,a
+MUL R2,R0
+
+ADD R2,R1
+MOV w,R2
