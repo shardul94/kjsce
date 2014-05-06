@@ -26,6 +26,9 @@ class codegen{
 			if(register2==-1){
 				System.out.println("R"+register_count+","+temp[4]);
 				register[register_count++]=temp[0];
+			}else if(register1==-1){
+				System.out.println("R"+register_count+","+"R"+register2);
+				register[register_count++]=temp[0];
 			}
 			if(register1!=-1&&register2!=-1){
 				System.out.println("R"+register1+",R"+register2);
