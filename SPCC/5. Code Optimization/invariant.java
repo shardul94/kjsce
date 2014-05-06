@@ -93,4 +93,27 @@ z = j + y ;
 y = j + t ;
 b = b + k ;
 }
+
+Enter no. of lines: 9
+Enter lines:
+for(i=0;i<10 ;i++)
+{
+d = num / denom ;
+for(j=0;j<10;ji++)
+{
+sum = sum + j ;
+k = d ;
+}
+}
+
+Output:
+d = num / denom ;
+k = d ;
+for(i=0;i<10 ;i++)
+{
+for(j=0;j<10;ji++)
+{
+sum = sum + j ;
+}
+}
 ****************************/
