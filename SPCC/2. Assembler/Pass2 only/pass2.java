@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
-class pass1{
+class pass2{
 	static ArrayList<MOT> mot;
 	static ArrayList<POT> pot;
 	static ArrayList<Symbol> symbol_table;
